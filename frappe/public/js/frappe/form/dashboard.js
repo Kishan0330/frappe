@@ -654,9 +654,13 @@ frappe.ui.form.Dashboard = class FormDashboard {
 		this.clear_headline();
 	}
 
-	set_headline_alert(text, color) {
-		if (text) {
-			this.set_headline(`<div>${text}</div>`, color);
+	set_headline_alert(text, color, imageUrl = null) {
+		if (text || imageUrl) {
+			let content = `<div>${text}</div>`;
+			if (imageUrl) {
+				content += `<div><img src="${imageUrl}" alt="SVG Image" /></div>`;
+			}
+			this.set_headline(content, color);
 		} else {
 			this.clear_headline();
 		}

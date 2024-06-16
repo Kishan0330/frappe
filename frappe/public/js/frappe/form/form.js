@@ -1387,8 +1387,9 @@ frappe.ui.form.Form = class FrappeForm {
 		return this.perm[permlevel] ? this.perm[permlevel][access_type] : null;
 	}
 
-	set_intro(txt, color) {
-		this.dashboard.set_headline_alert(txt, color);
+	set_intro(txt, color, imageUrl = null) {
+		console.log(color);
+		this.dashboard.set_headline_alert(txt, color, imageUrl);
 	}
 
 	set_footnote(txt) {
